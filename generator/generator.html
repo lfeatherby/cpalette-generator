@@ -2,8 +2,8 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
   <title>cpalette-generator</title>
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -12,8 +12,8 @@
 
 <body>
   <div id="root">
-  <div id="sch" class="scheme">
-    <!--<div id="overlay">-->
+    <div id="sch" class="scheme">
+      <!--<div id="overlay">-->
       <h1>Colour Scheme Generator</h1>
       <a href="../index.html"><button>Go Home</button></a>
       <a href="../picker/picker.html"><button>Go To Picker</button></a>
@@ -38,18 +38,22 @@
         <button type="button" name="button">5 colours</button>
       </div>
 
-    <!--</div>-->
-    <p class="scheme">Colour scheme (default mode: "monochrome", options: "monochrome-dark", "monochrome-light", "analogic", "complement", "analogic-complement", "triad", "quad")</p>
-    <p class="scheme">Default count: 5 colors</p>
-    <div id="pickerS" class="scheme picker"></div>
-    <!--
+      <!--</div>-->
+      <p class="scheme">
+        Colour scheme (default mode: "monochrome", options: "monochrome-dark",
+        "monochrome-light", "analogic", "complement", "analogic-complement",
+        "triad", "quad")
+      </p>
+      <p class="scheme">Default count: 5 colors</p>
+      <div id="pickerS" class="scheme picker"></div>
+      <!--
     <input type="text" name="" value="" placeholder="enter a hex colour" id="colour1" class="scheme" onclick="reset()">
     <input type="text" name="" value="" placeholder="enter a mode" id="mode" class="scheme" onclick="reset()">
     <input type="button" name="" value="Submit" id="submit1" onclick="submit(event)" class="scheme">
     <br>-->
-    <span id="multi" class="scheme"></span>
+      <span id="multi" class="scheme"></span>
+    </div>
   </div>
-</div>
   <script src="gScript.js"></script>
 </body>
 

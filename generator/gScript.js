@@ -7,25 +7,25 @@ var currentCount = ''
 
 /*next function will be setScheme(event) where it gets the class of the nav of event.target and depending on which one is clicked assigns the button value to currentMode or count*/
 /*have one setcount, one setmode function*/
-$(document).ready(function() {
-  $(".s-nav button").click(function() {
+$(document).ready(function () {
+  $(".s-nav button").click(function () {
     $(".s-nav button").removeClass("active");
     $(this).addClass("active");
   });
-  $("#resetALL").click(function() {
+  $("#resetALL").click(function () {
     $(":text").val("");
   });
-  $(".num-nav button").click(function() {
+  $(".num-nav button").click(function () {
     currentCount = $(this).text().charAt(0);
     $(".num-nav button").removeClass("active");
     $(this).addClass("active");
   });
-  $(".s-nav button").click(function() {
+  $(".s-nav button").click(function () {
     currentMode = $(this).text();
   });
 });
 
-colorPickerS.on(['input:end'], function(color) {
+colorPickerS.on(['input:end'], function (color) {
   // log the current color as a HEX string
   var request = new XMLHttpRequest()
   currentColour = color.hexString.slice(1)
@@ -39,7 +39,7 @@ colorPickerS.on(['input:end'], function(color) {
 
 
 
-  request.onload = function() {
+  request.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
     //console.log(data)
@@ -61,28 +61,28 @@ function submit(event) {
   var x = event.target;
   currentColour = document.getElementById('colour').value
   multi.innerHTML = ''
-      // Open a new connection, using the GET request on the URL endpoint
-      currentColour = document.getElementById('colour1').value
-      //currentMode = document.getElementById('mode').value
-      //currentCount = document.getElementById('count').value
-      var full = 'https://www.thecolorapi.com/scheme?hex=' + currentColour + '&mode=' + currentMode + '&count=' + currentCount;
-      console.log(full);
-      request.open('GET', full, true)
+  // Open a new connection, using the GET request on the URL endpoint
+  currentColour = document.getElementById('colour1').value
+  //currentMode = document.getElementById('mode').value
+  //currentCount = document.getElementById('count').value
+  var full = 'https://www.thecolorapi.com/scheme?hex=' + currentColour + '&mode=' + currentMode + '&count=' + currentCount;
+  console.log(full);
+  request.open('GET', full, true)
 
-      request.onload = function() {
-        // Begin accessing JSON data here
-        var data = JSON.parse(this.response)
-        //console.log(data)
+  request.onload = function () {
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.response)
+    //console.log(data)
 
-        for (var i = 0; i < data.count; i++) {
-          var pic = document.createElement('img')
-          pic.src = data.colors[i].image['bare']
-          multi.appendChild(pic);
-        }
-      }
+    for (var i = 0; i < data.count; i++) {
+      var pic = document.createElement('img')
+      pic.src = data.colors[i].image['bare']
+      multi.appendChild(pic);
+    }
+  }
 
-      // Send request
-      request.send()
+  // Send request
+  request.send()
 
 }
 
@@ -95,5 +95,5 @@ function off() {
 }
 
 function reset() {
-      multi.innerHTML = ''
+  multi.innerHTML = ''
 }

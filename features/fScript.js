@@ -6,7 +6,7 @@ var colorPicker1 = new iro.ColorPicker('#picker1', {
   ]
 });
 
-colorPicker1.on('color:change', function(color) {
+colorPicker1.on('color:change', function (color) {
   var hex1 = colorPicker1.colors[0].hexString;
   // log the current color as a HEX string
   document.getElementById("hex1").innerHTML = hex1;
