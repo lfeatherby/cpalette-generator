@@ -1,32 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>cpalette-generator - Colour Picker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="pStyle.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>cpalette-generator - Colour Picker</title>
-  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link href="pStyle.css" rel="stylesheet" type="text/css" />
-</head>
+  <body>
+    <div id="root">
+      <div id="ind" class="indiv">
+        <h1>Colour Picker</h1>
+        <a href="../index.html" class="text-white bg-blue-500"> <button>Go Home</button> </a>
+        <a href="../generator/generator.html"><button>Go To Generator</button></a>
+        <a href="../features/features.html"><button>Go To Feedback/Features</button></a>
 
-<body>
-  <div id="root">
-    <div id="ind" class="indiv">
-      <h1>Colour Picker</h1>
-      <a href="../index.html"><button>Go Home</button></a>
-      <a href="../generator/generator.html"><button>Go To Generator</button></a>
-      <a href="../features/features.html"><button>Go To Feedback/Features</button></a>
-
-      <div id="pickerI" class="indiv picker"></div>
-      <!--<input type="text" name="" value="" placeholder="enter a hex colour" id="colour" class="indiv" onclick="reset(event)">
+        <div id="pickerI" class="indiv picker"></div>
+        <!--<input type="text" name="" value="" placeholder="enter a hex colour" id="colour" class="indiv" onclick="reset(event)">
       <input type="button" name="" value="Submit" id="submit" onclick="submit(event)" class="indiv">
       <br>-->
-      <div class="indiv" id="single"></div>
+        <div class="indiv" id="single"></div>
+      </div>
     </div>
-  </div>
 
-  <script src="pScript.js"></script>
-</body>
-
+    <script src="pScript.js"></script>
+  </body>
 </html>
