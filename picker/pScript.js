@@ -2,12 +2,9 @@ const app = document.getElementById('root')
 const ind = document.getElementById('ind')
 var c = document.createElement('img')
 var single = document.getElementById('single')
-
 var colorPickerI = new iro.ColorPicker('#pickerI');
 var currentColour = ''
 
-/*next function will be setScheme(event) where it gets the class of the nav of event.target and depending on which one is clicked assigns the button value to currentMode or count*/
-/*have one setcount, one setmode function*/
 $(document).ready(function () {
   $("#resetALL").click(function () {
     $(":text").val("");

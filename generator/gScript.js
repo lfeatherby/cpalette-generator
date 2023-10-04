@@ -5,8 +5,6 @@ var currentColour = ''
 var currentMode = ''
 var currentCount = ''
 
-/*next function will be setScheme(event) where it gets the class of the nav of event.target and depending on which one is clicked assigns the button value to currentMode or count*/
-/*have one setcount, one setmode function*/
 $(document).ready(function () {
   $(".s-nav button").click(function () {
     $(".s-nav button").removeClass("active");
