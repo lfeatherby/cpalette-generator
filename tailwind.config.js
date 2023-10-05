@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ["./picker/picker.html"],
   theme: {
     extend: {},
   },
