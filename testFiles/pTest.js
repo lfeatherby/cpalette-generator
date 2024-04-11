@@ -1,9 +1,12 @@
+const { default: Color } = require("colorjs.io/types/src");
+
 const app = document.getElementById('root')
 const ind = document.getElementById('ind')
 var c = document.createElement('img')
 var single = document.getElementById('single')
 var colorPickerI = new iro.ColorPicker('#pickerI');
-var currentColour = ''
+var currentColour = '';
+let color1 = new Color("rgb(0,255,255)");
 
 $(document).ready(function () {
     $("#resetALL").click(function () {
