@@ -9,6 +9,7 @@ $(document).ready(function () {
   $(".s-nav button").click(function () {
     $(".s-nav button").removeClass("active");
     $(this).addClass("active");
+    currentMode = $(this).text();
   });
   $("#resetALL").click(function () {
     $(":text").val("");
@@ -17,9 +18,6 @@ $(document).ready(function () {
     currentCount = $(this).text().charAt(0);
     $(".num-nav button").removeClass("active");
     $(this).addClass("active");
-  });
-  $(".s-nav button").click(function () {
-    currentMode = $(this).text();
   });
 });
 
