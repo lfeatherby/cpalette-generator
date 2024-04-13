@@ -2,30 +2,35 @@ const app = document.getElementById('root')
 var multi = document.getElementById('multi')
 var colorPickerS = new iro.ColorPicker('#pickerS');
 var currentColour = ''
-var currentMode = ''
-var currentCount = ''
+var currentMode = 'monochrome'
+var currentCount = '5'
 
 $(document).ready(function () {
   $(".s-nav button").click(function () {
     $(".s-nav button").removeClass("active");
     $(this).addClass("active");
     currentMode = $(this).text();
+
   });
   $("#resetALL").click(function () {
     $(":text").val("");
   });
   $(".num-nav button").click(function () {
-    currentCount = $(this).text().charAt(0);
     $(".num-nav button").removeClass("active");
     $(this).addClass("active");
+    currentCount = $(this).text().charAt(0);
+  });
+  $(".navbar button").click(function () {
+    currentColour = colorPickerS.color.hexString.slice(1);
+    submit();
   });
 });
 
 colorPickerS.on(['input:end'], function (color) {
   // log the current color as a HEX string
-  var request = new XMLHttpRequest()
-  currentColour = color.hexString.slice(1)
-  multi.innerHTML = ''
+  var request = new XMLHttpRequest();
+  currentColour = color.hexString.slice(1);
+  multi.innerHTML = '';
   // Open a new connection, using the GET request on the URL endpoint
   //currentMode = document.getElementById('mode').value
   //currentCount = document.getElementById('count').value
@@ -50,15 +55,12 @@ colorPickerS.on(['input:end'], function (color) {
   // Send request
   request.send()
 });
-
-function submit(event) {
+function submit() {
   // Create a request variable and assign a new XMLHttpRequest object to it.
   var request = new XMLHttpRequest()
-  var x = event.target;
-  currentColour = document.getElementById('colour').value
+  // var x = event.target;
   multi.innerHTML = ''
   // Open a new connection, using the GET request on the URL endpoint
-  currentColour = document.getElementById('colour1').value
   //currentMode = document.getElementById('mode').value
   //currentCount = document.getElementById('count').value
   var full = 'https://www.thecolorapi.com/scheme?hex=' + currentColour + '&mode=' + currentMode + '&count=' + currentCount;
