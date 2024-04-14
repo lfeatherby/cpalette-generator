@@ -46,6 +46,7 @@ colorPickerS.on(['input:end'], function (color) {
     //console.log(data)
 
     for (var i = 0; i < data.count; i++) {
+      //console.log(data.count);
       var pic = document.createElement('img')
       pic.src = data.colors[i].image['bare']
       multi.appendChild(pic);
