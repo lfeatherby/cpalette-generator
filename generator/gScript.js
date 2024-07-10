@@ -11,21 +11,21 @@ $(document).ready(function () {
     $(this).addClass("active");
     currentMode = $(this).text();
   });
-  $("#complement").click(function () {
+  $(".complement").click(function () {
     $(".num-nav button").removeClass("active");
-    $("#two").addClass("active");
-    currentCount = $("#two").text().charAt(0);
+    $(".two").addClass("active");
+    currentCount = $(".two").text().charAt(0);
   });
-  $("#triad").click(function () {
+  $(".triad").click(function () {
     $(".num-nav button").removeClass("active");
-    $("#three").addClass("active");
-    currentCount = $("#three").text().charAt(0);
+    $(".three").addClass("active");
+    currentCount = $(".three").text().charAt(0);
   });
-  $("#quad").click(function () {
+  $(".quad").click(function () {
     $(".num-nav button").removeClass("active");
-    $("#four").addClass("active");
-    console.log($("#four").text().charAt(0));
-    currentCount = $("#four").text().charAt(0);
+    $(".four").addClass("active");
+    console.log($(".four").text().charAt(0));
+    currentCount = $(".four").text().charAt(0);
   });
   $("#resetALL").click(function () {
     $(":text").val("");
