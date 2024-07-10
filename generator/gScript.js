@@ -13,18 +13,19 @@ $(document).ready(function () {
   });
   $("#complement").click(function () {
     $(".num-nav button").removeClass("active");
-    //$("#two").addClass("active");
-    currentCount = "2";
+    $("#two").addClass("active");
+    currentCount = $("#two").text().charAt(0);
   });
   $("#triad").click(function () {
     $(".num-nav button").removeClass("active");
-    //$("#three").addClass("active");
-    currentCount = "3";
+    $("#three").addClass("active");
+    currentCount = $("#three").text().charAt(0);
   });
   $("#quad").click(function () {
     $(".num-nav button").removeClass("active");
-    //$("#four").addClass("active");
-    currentCount = "4";
+    $("#four").addClass("active");
+    console.log($("#four").text().charAt(0));
+    currentCount = $("#four").text().charAt(0);
   });
   $("#resetALL").click(function () {
     $(":text").val("");
