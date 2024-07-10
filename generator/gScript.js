@@ -10,19 +10,21 @@ $(document).ready(function () {
     $(".s-nav button").removeClass("active");
     $(this).addClass("active");
     currentMode = $(this).text();
-    if ($(this).attr("id").is("complement")) {
-      $(".num-nav button").removeClass("active");
-      $("#two").addClass("active");
-      currentCount = '2';
-    } else if ($(this).attr("id").is("triad")) {
-      $(".num-nav button").removeClass("active");
-      $("#three").addClass("active");
-      currentCount = '3';
-    } else if ($(this).attr("id").is("quad")) {
-      $(".num-nav button").removeClass("active");
-      $("#four").addClass("active");
-      currentCount = '4';
-    }
+  });
+  $("#complement").click(function () {
+    $(".num-nav button").removeClass("active");
+    $("#two").addClass("active");
+    currentCount = '2';
+  });
+  $("#triad").click(function () {
+    $(".num-nav button").removeClass("active");
+    $("#three").addClass("active");
+    currentCount = '3';
+  });
+  $("#quad").click(function () {
+    $(".num-nav button").removeClass("active");
+    $("#four").addClass("active");
+    currentCount = '4';
   });
   $("#resetALL").click(function () {
     $(":text").val("");
