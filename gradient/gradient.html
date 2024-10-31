@@ -23,8 +23,12 @@
       the slider to choose the number of colours in the gradient including the start and end ones.
     </p>
     <div id="gradBoxes">
-      <div id="box1" class="boxy" onclick="on1()"></div>
-      <div id="box2" class="boxy" onclick="on2()"></div>
+      <div id="box1" class="sq" onclick="on1()">
+        <p class="lbl">#ff5005</p>
+      </div>
+      <div id="box2" class="sq" onclick="on2()">
+        <p class="lbl">#bf00ff</p>
+      </div>
       <div class="">
         <label for="numSteps">How many intermediate colours would you like? (5 to 50): </label>
         <input type="range" name="numSteps" id="numSteps" min="5" max="50" value="5" />

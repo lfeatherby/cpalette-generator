@@ -53,11 +53,6 @@
     width: auto;
 }
 
-.boxy {
-    height: 100px;
-    width: 100px;
-    display: inline-block;
-}
 
 #box1 {
     background-color: #ff5005;
