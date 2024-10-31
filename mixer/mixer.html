@@ -4,32 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>cpalette-generator - Gradient Generator</title>
+    <title>cpalette-generator - Colour Mixer</title>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://colorjs.io/dist/color.global.js"></script>
-    <link rel="stylesheet" href="gradStyle.css" />
+    <link rel="stylesheet" href="mStyle.css" />
   </head>
   <body>
-    <h1>Gradient Generator</h1>
+    <h1>Colour Mixer</h1>
     <a href="../index.html"><button>Go Home</button></a>
     <a href="../picker/picker.html"><button>Go To Picker</button></a>
     <a href="../generator/generator.html"><button>Go To Generator</button></a>
-    <a href="../mixer/mixer.html"><button>Go To Mixer</button></a>
+    <a href="../gradient/gradient.html"></a><button>Go To Gradient Generator</button></a>
     <a href="../features/features.html"><button>Go To Features</button></a>
     <h3>How it works</h3>
     <p>
-      Click on each box to open a colour picker and choose the gradient start and end colours. Use
-      the slider to choose the number of colours in the gradient including the start and end ones.
+      Click on each box to open a colour picker and choose the colours to mix.
+      Use the slider to choose the mixing proportion.
     </p>
-    <div id="gradBoxes">
-      <div id="box1" class="boxy" onclick="on1()"></div>
-      <div id="box2" class="boxy" onclick="on2()"></div>
-      <div class="">
-        <label for="numSteps">How many intermediate colours would you like? (5 to 50): </label>
-        <input type="range" name="numSteps" id="numSteps" min="5" max="50" value="5" />
-        <p>Steps: <output id="stepsVal"></output></p>
+    <div id="mixBoxes">
+      <div id="boxes">
+        <div id="box1" class="boxy sq" onclick="on1()">
+          <p id="lbl1" class="lbl">#ff5005</p>
+        </div>
+
+        <div id="box2" class="boxy sq" onclick="on2()">
+          <p id="lbl2" class="lbl">#bf00ff</p>
+        </div>
       </div>
+
+      <div class="">
+        <label for="propRange"
+          >What proportion of colours? (0 to 1 by 0.05):
+        </label>
+        <input
+          type="range"
+          name="propRange"
+          id="propRange"
+          min="0"
+          max="1"
+          step="0.05"
+          value="0.5" />
+        <p>Proportion: <output id="propVal"></output></p>
+      </div>
+      <div id="multi"></div>
     </div>
     <div id="startOverlay" class="overlay">
       <div id="pickerS" class="picker"></div>
@@ -42,7 +60,6 @@
       <button id="hideEOverlay" class="offButton">off</button>
     </div>
 
-    <div id="multi"></div>
-    <script src="gradScript.js"></script>
+    <script src="mScript.js"></script>
   </body>
 </html>
