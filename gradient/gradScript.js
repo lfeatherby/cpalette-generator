@@ -7,37 +7,57 @@ var pickerE = new iro.ColorPicker('#pickerE', {
 let sel = document.getElementById('sel');
 let b1 = document.getElementById('box1');
 let b2 = document.getElementById('box2');
-let c1 = '';
-let c2 = '';
-let n = 0;
+let offS = document.getElementById('hideSOverlay');
+let offE = document.getElementById('hideEOverlay');
+let c1 = pickerS.color.hexString;
+let c2 = pickerE.color.hexString;
+let n = 5;
+var multi = document.getElementById('multi');
 $(document).ready(function () {
-    $("#numSteps").on("mousedown", function () {
-        multi.innerHTML = '';
+    $("#stepsVal").text($("#numSteps").val());
+    $("#numSteps").on({
+        mousedown: function () {
+            multi.innerHTML = '';
+        },
+        input: function () {
+            $("#stepsVal").text($(this).val());
+            n = $(this).val();
+        },
+        mouseup: function () {
+            n = $(this).val();
+            submit();
+        }
     });
-    $("#numSteps").on("input", function () {
-        $("#stepsVal").text($(this).val());
-        n = $(this).val();
+    $("#hex1").on("input", function () {
+        c1 = '#' + $(this).val().replace("#", "");
+        pickerS.color.hexString = c1;
+        b1.style.backgroundColor = c1;
     });
-    $("#numSteps").on("mouseup", function () {
-        n = $(this).val();
+    $("#hex2").on("input", function () {
+        c2 = '#' + $(this).val().replace("#", "");
+        pickerE.color.hexString = c2;
+        b2.style.backgroundColor = c2;
+    });
+    $(".offButton").on("click", function () {
+        b1.style.backgroundColor = c1;
+        b2.style.backgroundColor = c2;
+        var overlays = $(".overlay");
+        for (var j = 0; j < overlays.length; j++) {
+            overlays[j].style.display = "none";
+        }
+        //let col = colour1.to("srgb");
         submit();
-    });
+    })
 });
 
 function on1() {
     document.getElementById("startOverlay").style.display = "block";
+    multi.innerHTML = '';
 }
 
 function on2() {
     document.getElementById("endOverlay").style.display = "block";
-}
-
-function off() {
-    var overlays = document.getElementsByClassName("overlay");
-    for (var j = 0; j < overlays.length; j++) {
-        overlays[j].style.display = "none";
-    }
-    //let col = colour1.to("srgb");
+    multi.innerHTML = '';
 }
 
 pickerS.on(['input:end'], function (color) {
@@ -64,7 +84,7 @@ function submit() {
 
     let r = Color.range(c1, c2);
     let stops = Color.steps(r, { steps: n });
-    var multi = document.getElementById('multi');
+
 
     let cols = new Array(stops.length);
     for (let i = 0; i < stops.length; i++) {

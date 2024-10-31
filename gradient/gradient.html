@@ -26,17 +26,19 @@
       <div id="box2" class="boxy" onclick="on2()"></div>
       <div class="">
         <label for="numSteps">How many intermediate colours would you like? (5 to 50): </label>
-        <input type="range" name="numSteps" id="numSteps" min="5" max="50" />
+        <input type="range" name="numSteps" id="numSteps" min="5" max="50" value="5" />
         <p>Steps: <output id="stepsVal"></output></p>
       </div>
     </div>
     <div id="startOverlay" class="overlay">
       <div id="pickerS" class="picker"></div>
-      <button onclick="off()" id="hideSOverlay" class="offButton">off</button>
+      <input type="text" name="hex1" id="hex1" class="hex" />
+      <button id="hideSOverlay" class="offButton">off</button>
     </div>
     <div id="endOverlay" class="overlay">
       <div id="pickerE" class="picker"></div>
-      <button onclick="off()" id="hideEOverlay" class="offButton">off2</button>
+      <input type="text" name="hex2" id="hex2" class="hex" />
+      <button id="hideEOverlay" class="offButton">off</button>
     </div>
 
     <div id="multi"></div>
