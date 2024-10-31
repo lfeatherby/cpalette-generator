@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+#multi {
+    margin: auto;
+    width: auto;
+}
+
+.sq {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.lbl {
+    margin: 0 auto;
+    line-height: 100px;
+}
+
+.picker {
+    padding: 20px;
+}
+
+#showOverlay {
+    border: none;
+}
+
+.overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Black background with opacity */
+    z-index: 1;
+    /* Specify a stack order in case you're using a different order for other elements */
+}
+
+#gradBoxes {
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+}
+
+.boxy {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+
+#box1 {
+    background-color: #ff5005;
+}
+
+#box2 {
+    background-color: #bf00ff;
+}
