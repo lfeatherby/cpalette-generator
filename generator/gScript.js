@@ -62,14 +62,14 @@ function myDisplayFunction(myObj) {
     //console.log(data.count);
     var l = document.createElement("p");
     l.textContent = myObj.colors[i].hex["value"].toLowerCase();
-    l.style.color = myObj.contrast["value"];
+    l.style.color = myObj.colors[i].contrast["value"];
     l.classList.add("lbl");
     var d = document.createElement("div");
     d.appendChild(l);
     d.classList.add("sq");
     d.style.backgroundColor = myObj.colors[i].hex["value"];
     multi.appendChild(d);
-    lbl1.style.color = myObj.contrast["value"];
+    //lbl1.style.color = myObj.contrast["value"];
   }
 }
 pickerS.on(["input:end"], function (color) {
