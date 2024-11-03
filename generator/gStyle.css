@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Style the navigation menu */
 .navbar {
   width: 100%;
