@@ -46,11 +46,13 @@ $(document).ready(function () {
   $("#hex1").on("input", function () {
     c1 = $(this).val().replace("#", "");
     pickerS.color.hexString = "#" + c1;
-    b1.style.backgroundColor = "#" + c1;
+    b1.style.backgroundColor = "#" + c1
+    lbl1.style.color = getCont(c1);
     lbl1.textContent = "#" + c1;
   });
   $("#offButton").on("click", function () {
     b1.style.backgroundColor = c1;
+    lbl1.style.color = getCont(c1);
     var o = $(".overlay");
     o[0].style.display = "none";
     submit();
@@ -77,6 +79,7 @@ pickerS.on(["input:end"], function (color) {
   c1 = color.hexString.slice(1);
   multi.innerHTML = "";
   lbl1.textContent = color.hexString;
+  lbl1.style.color = getCont(c1);
   b1.style.backgroundColor = color.hexString;
   // Open a new connection, using the GET request on the URL endpoint
   //currentMode = document.getElementById('mode').value
@@ -94,6 +97,19 @@ function submit() {
     currentCount +
     "&callback=myDisplayFunction";
   document.body.appendChild(s);
+}
+
+function getCont(colour) {
+  let s = document.createElement("script");
+  s.src =
+    "https://www.thecolorapi.com/id?hex=" +
+    colour +
+    "&format=jsonp&callback=myContrastFunction";
+  document.body.appendChild(s);
+}
+function myContrastFunction(myObj) {
+  console.log("contrast: " + myObj.contrast["value"]);
+  lbl1.style.color = myObj.contrast["value"];
 }
 
 function on() {
