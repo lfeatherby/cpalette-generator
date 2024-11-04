@@ -68,3 +68,8 @@
 #box2 {
     background-color: #bf00ff;
 }
+
+#contrast {
+    display: none;
+    opacity: 0;
+}

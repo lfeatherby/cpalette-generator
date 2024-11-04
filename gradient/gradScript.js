@@ -14,6 +14,7 @@ let offE = document.getElementById('hideEOverlay');
 let c1 = pickerS.color.hexString;
 let c2 = pickerE.color.hexString;
 let n = 5;
+let cont = document.getElementById("contrast");
 var multi = document.getElementById('multi');
 $(document).ready(function () {
     $("#stepsVal").text($("#numSteps").val());
@@ -104,7 +105,8 @@ function submit() {
         var l = document.createElement('p');
         l.textContent = cols[j];
         l.classList.add('lbl');
-        l.style.color = getCont(cols[j].slice(1));
+        getCont(cols[j].slice(1));
+        l.style.color = cont.textContent;
         console.log(getCont(cols[j].slice(1)));
         var d = document.createElement('div');
         d.appendChild(l);
@@ -113,6 +115,13 @@ function submit() {
         multi.appendChild(d);
     }
 }
+
+function myContrastFunction(myObj) {
+    cont.textContent = myObj.contrast["value"]
+    //console.log(myObj.contrast["value"]);
+    //return myObj.contrast["value"];
+    //lbl1.style.color = myObj.contrast["value"];
+}
 function getCont(colour) {
     let s = document.createElement("script");
     s.src =
@@ -120,9 +129,4 @@ function getCont(colour) {
         colour +
         "&format=jsonp&callback=myContrastFunction";
     document.body.appendChild(s);
-}
-function myContrastFunction(myObj) {
-    console.log(myObj.contrast["value"]);
-    return myObj.contrast["value"];
-    //lbl1.style.color = myObj.contrast["value"];
 }
