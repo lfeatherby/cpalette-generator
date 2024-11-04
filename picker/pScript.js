@@ -47,7 +47,7 @@ function myDisplayFunction(myObj) {
   single.appendChild(d);
   lbl1.style.color = myObj.contrast["value"];
 }
-function submit(event) {
+function submit() {
   // Create a request variable and assign a new XMLHttpRequest object to it.
   single.innerHTML = "";
   let s = document.createElement("script");
