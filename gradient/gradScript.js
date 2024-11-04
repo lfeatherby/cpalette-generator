@@ -14,7 +14,7 @@ let offE = document.getElementById('hideEOverlay');
 let c1 = pickerS.color.hexString;
 let c2 = pickerE.color.hexString;
 let n = 5;
-let cont = document.getElementById("contrast");
+
 var multi = document.getElementById('multi');
 $(document).ready(function () {
     $("#stepsVal").text($("#numSteps").val());
@@ -35,21 +35,17 @@ $(document).ready(function () {
         c1 = '#' + $(this).val().replace("#", "");
         pickerS.color.hexString = c1;
         b1.style.backgroundColor = c1;
-        lbl1.style.color = getCont(c1);
         lbl1.textContent = c1;
     });
     $("#hex2").on("input", function () {
         c2 = '#' + $(this).val().replace("#", "");
         pickerE.color.hexString = c2;
         b2.style.backgroundColor = c2;
-        lbl2.style.color = getCont(c2);
         lbl2.textContent = c2;
     });
     $(".offButton").on("click", function () {
         b1.style.backgroundColor = c1;
         b2.style.backgroundColor = c2;
-        lbl1.style.color = getCont(c1);
-        lbl2.style.color = getCont(c2);
         var overlays = $(".overlay");
         for (var j = 0; j < overlays.length; j++) {
             overlays[j].style.display = "none";
@@ -77,7 +73,6 @@ pickerS.on(['input:end'], function (color) {
     b1.style.backgroundColor = color.hexString;
     c1 = color.hexString;
     lbl1.textContent = c1;
-    lbl1.style.color = getCont(c1);
 });
 
 pickerE.on(['input:end'], function (color) {
@@ -88,7 +83,6 @@ pickerE.on(['input:end'], function (color) {
     b2.style.backgroundColor = color.hexString;
     c2 = color.hexString;
     lbl2.textContent = c2;
-    lbl2.style.color = getCont(c2);
 });
 
 function submit() {
@@ -105,28 +99,10 @@ function submit() {
         var l = document.createElement('p');
         l.textContent = cols[j];
         l.classList.add('lbl');
-        getCont(cols[j]);
-        l.style.color = cont.textContent;
-        console.log(cont.textContent);
         var d = document.createElement('div');
         d.appendChild(l);
         d.classList.add('sq');
         d.style.backgroundColor = cols[j];
         multi.appendChild(d);
     }
-}
-
-function myContrastFunction(myObj) {
-    cont.textContent = myObj.contrast["value"]
-    //console.log(myObj.contrast["value"]);
-    //return myObj.contrast["value"];
-    //lbl1.style.color = myObj.contrast["value"];
-}
-function getCont(colour) {
-    let s = document.createElement("script");
-    s.src =
-        "https://www.thecolorapi.com/id?hex=" +
-        colour.replace("#", "") +
-        "&format=jsonp&callback=myContrastFunction";
-    document.body.appendChild(s);
 }
