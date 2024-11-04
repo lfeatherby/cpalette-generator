@@ -105,9 +105,9 @@ function submit() {
         var l = document.createElement('p');
         l.textContent = cols[j];
         l.classList.add('lbl');
-        getCont(cols[j].slice(1));
+        getCont(cols[j]);
         l.style.color = cont.textContent;
-        console.log(getCont(cols[j].slice(1)));
+        console.log(cont.textContent);
         var d = document.createElement('div');
         d.appendChild(l);
         d.classList.add('sq');
@@ -126,7 +126,7 @@ function getCont(colour) {
     let s = document.createElement("script");
     s.src =
         "https://www.thecolorapi.com/id?hex=" +
-        colour +
+        colour.replace("#", "") +
         "&format=jsonp&callback=myContrastFunction";
     document.body.appendChild(s);
 }
