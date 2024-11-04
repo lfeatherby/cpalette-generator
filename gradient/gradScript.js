@@ -105,7 +105,7 @@ function submit() {
         l.textContent = cols[j];
         l.classList.add('lbl');
         l.style.color = getCont(cols[j].slice(1));
-        console.log(getCont(cols[j].slice(1)));
+        console.log(getCont(cols[j]));
         var d = document.createElement('div');
         d.appendChild(l);
         d.classList.add('sq');
