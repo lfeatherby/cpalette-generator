@@ -122,6 +122,7 @@ function getCont(colour) {
     document.body.appendChild(s);
 }
 function myContrastFunction(myObj) {
+    console.log(myObj.contrast);
     return myObj.contrast["value"];
     //lbl1.style.color = myObj.contrast["value"];
 }
