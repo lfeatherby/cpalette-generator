@@ -1,6 +1,8 @@
 const app = document.getElementById("root");
 var multi = document.getElementById("multi");
-var pickerS = new iro.ColorPicker("#pickerS");
+var pickerS = new iro.ColorPicker('#pickerS', {
+  color: "#ff5005"
+});
 var currentColour = "";
 var currentMode = "monochrome";
 var currentCount = "5";
@@ -46,7 +48,7 @@ $(document).ready(function () {
   $("#hex1").on("input", function () {
     c1 = $(this).val().replace("#", "");
     pickerS.color.hexString = "#" + c1;
-    b1.style.backgroundColor = "#" + c1
+    b1.style.backgroundColor = "#" + c1;
     lbl1.style.color = getCont(c1);
     lbl1.textContent = "#" + c1;
   });
